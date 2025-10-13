@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeevapriyan S | Portfolio</title>
+
+  <!-- ===== Google Fonts ===== -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="cs.css" />
+</head>
+<body class>
+  <!-- ===== THEME TOGGLE ===== -->
+  
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <h2 class="logo">Jeeva<span>Priyan</span></h2>
+    <ul class="nav-links">
+      <li><a href="#career">Career</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+    </ul>
+    <div class="menu-toggle">☰</div>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <header class="fade-in">
+    <div class="profile-container">
+      <img src="/storage/emulated/0/Pictures/CS Image Converter/IMG_20240821_115020.jpeg" alt="Profile Photo" class="profile-pic" />
+    </div>
+    <h1>Jeevapriyan S</h1>
+    <p class="tagline">Aspiring Software Engineer | Computer Science Student</p>
+    <div class="contact">
+      <a href="mailto:jeevapriyan14062006@gmail.com">✉️ Email</a> |
+      <a href="tel:+917358388312">📞 Call</a> |
+      <span>📍 Villupuram</span>
+    </div>
+  </header>
+
+  <!-- ===== CAREER OBJECTIVE ===== -->
+  <section id="career" class="fade-section">
+    <h2>Career Objective</h2>
+    <p>
+      Motivated Computer Science Engineering student with strong problem-solving, programming, and analytical skills.
+      Seeking opportunities to apply my technical knowledge and grow as a software engineer by contributing to
+      innovative and impactful projects.
+    </p>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="fade-section">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate and motivated Computer Science Engineering student at Mailam Engineering College.
+      I enjoy solving problems, coding, and exploring innovative technologies.
+      My goal is to become a skilled software engineer and contribute to real-world impactful projects.
+    </p>
+    <a href="/storage/emulated/0/Download/JEEVAPRIYAN_S_Resume_Professional (1).docx" download class="resume-btn">📄 Download Resume</a>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="fade-section">
+    <h2>Technical Skills</h2>
+    <div class="skill-bar"><p>C</p><div class="bar"><span class="fill" style="width:95%"></span></div></div>
+    <div class="skill-bar"><p>Python</p><div class="bar"><span class="fill" style="width:90%"></span></div></div>
+    <div class="skill-bar"><p>Java</p><div class="bar"><span class="fill" style="width:70%"></span></div></div>
+    <div class="skill-bar"><p>HTML / CSS</p><div class="bar"><span class="fill" style="width:85%"></span></div></div>
+    <div class="skill-bar"><p>Problem Solving</p><div class="bar"><span class="fill" style="width:92%"></span></div></div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="fade-section">
+    <h2>Education</h2>
+    <div class="edu">
+      <h3>B.Tech – Computer Science Engineering</h3>
+      <p>Mailam Engineering College, Mailam (2024 – Present)</p>
+      <p><em>CGPA: 9.2 | Merit Scholarship Holder</em></p>
+    </div>
+    <div class="edu">
+      <h3>Class XII – HSC</h3>
+      <p>Tamil Nadu State Board, 2024</p>
+      <p><em>Score: 87.17% | English Medium</em></p>
+    </div>
+    <div class="edu">
+      <h3>Class X – SSLC</h3>
+      <p>Tamil Nadu State Board, 2022</p>
+      <p><em>Score: 81.4% | English Medium</em></p>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="fade-section">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>🔹 Simple Python Calculator</h3>
+      <p>Developed a console-based calculator that performs basic arithmetic operations using Python.</p>
+    </div>
+    <div class="project">
+      <h3>🔹 Website Portfolio (HTML/CSS)</h3>
+      <p>Designed and built a responsive personal portfolio showcasing education, skills, and achievements.</p>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS ===== -->
+  <section id="achievements" class="fade-section">
+    <h2>Achievements</h2>
+    <ul>
+      <li>🏅 Ranked Top 3 in class – Awarded merit scholarship.</li>
+      <li>🎓 School Topper in Class XII – Academic excellence award.</li>
+      <li>🌟 Recognized as an All-rounder in school activities.</li>
+    </ul>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="fade-in">
+    <p>© 2025 Jeevapriyan S | Designed with ❤️ by Jeevapriyan</p>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    // Scroll fade-in
+    const sections = document.querySelectorAll('.fade-section');
+    const reveal = () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) sec.classList.add('show');
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      body.classList.toggle('dark-mode');
+      toggleBtn.textContent = body.classList.contains('light-mode') ? "☀️" : "🌙";
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* ===== Base Typography ===== */
+body, p, li {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0; padding: 0;
+  color: #1e1e1e;
+  background: #f0f2f5;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, .logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Theme Colors ===== */
+:root {
+  --primary: #0ea5e9;    /* Teal blue */
+  --secondary: #14b8a6;  /* Accent teal */
+  --bg-light: #ffffff;
+  --text-light: #1e1e1e;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg-light);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 0 0 15px 15px;
+}
+
+.logo { font-size: 1.8rem; color: var(--primary); }
+.nav-links { display: flex; gap: 25px; list-style: none; }
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-light);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* ===== Header / Hero ===== */
+header {
+  text-align: center;
+  padding: 7rem 1rem 4rem;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.profile-pic {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(14,165,233,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(14,165,233,0.5);
+}
+
+h1 { font-size: 3rem; color: var(--primary); }
+.tagline { font-size: 1.1rem; color: #555; }
+
+/* ===== Sections ===== */
+section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  border-bottom: 3px solid var(--secondary);
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: rgba(255,255,255,0.9);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(14,165,233,0.15);
+}
+
+/* ===== Skill Bars ===== */
+.skill-bar { margin-bottom: 1rem; }
+.bar {
+  background: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 14px;
+}
+.fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 12px;
+  animation: load 2s ease-out forwards;
+}
+@keyframes load { from { width: 0; } }
+
+/* ===== Buttons ===== */
+.button, .resume-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 5px 15px rgba(14,165,233,0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::after, .resume-btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.4s ease;
+  border-radius: 12px;
+}
+
+.button:hover::after, .resume-btn:hover::after { left: 0; }
+
+.button:hover, .resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(14,165,233,0.5);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255,255,255,0.9);
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+  border-top: 2px solid var(--primary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links { flex-direction: column; gap: 15px; }
+  header { padding: 6rem 1rem 3rem; }
+  .profile-pic { width: 130px; height: 130px; }
+}
